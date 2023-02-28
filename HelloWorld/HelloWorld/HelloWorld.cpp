@@ -12,6 +12,9 @@ int main()
     int b = 25;
     printf("Number A: %d, Number B: %d\n", a, b);
 
+   /*int temp = a;
+    a = b;
+    b = temp;*/
     std::swap(a, b);
     printf("Number A: %d, Number B: %d\n", a, b);
 
