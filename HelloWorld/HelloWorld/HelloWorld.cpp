@@ -2,10 +2,19 @@
 //
 
 #include <iostream>
+#include <cstdio>
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+    int a = 50;
+    int b = 25;
+    printf("Number A: %d, Number B: %d\n", a, b);
+
+    std::swap(a, b);
+    printf("Number A: %d, Number B: %d\n", a, b);
+
     system("pause");
 }
 
