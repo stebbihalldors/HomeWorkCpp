@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdio>
 
+void PrintTriangle();
+
 int main()
 {
     std::cout << "Hello World!\n";
@@ -18,7 +20,25 @@ int main()
     std::swap(a, b);
     printf("Number A: %d, Number B: %d\n", a, b);
 
+    PrintTriangle();
     system("pause");
+}
+
+void PrintTriangle()
+{
+    for (std::size_t i = 6; i--> 0;)
+    {
+        for (std::size_t j = 0; j < i; ++j)
+            printf("& ");
+        printf("&\n");
+    }
+
+    /*
+    for (std::size_t i = 7; i-->0;)
+    {
+        printf("%s",std::string(i,'&').c_str());
+        printf("\n");
+    }*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
