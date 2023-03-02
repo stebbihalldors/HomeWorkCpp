@@ -6,7 +6,7 @@ void PrintOutAlphabet();
 int main()
 {
 	PrintOutAlphabet();
-   
+	return 0;
 }
 
 void PrintOutAlphabet()
