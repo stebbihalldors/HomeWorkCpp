@@ -74,7 +74,7 @@ int EasyAI(int matchesRemaining)
 
 int Player(int matchesRemaining)
 {
-    unsigned int ans;
+    int ans;
     
     printf("How many matches would u like to take 1-3? \n");
     while (true)
