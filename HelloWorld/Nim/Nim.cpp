@@ -10,6 +10,7 @@ int Player(int matchesRemaining);
 
 int main()
 {
+    srand(time(0));
     bool playersTurn = true;
     int matchesLeft = 24;
    
@@ -54,8 +55,6 @@ void PrintMatchesLeft(int a)
 int EasyAI(int matchesRemaining)
 {
     int ans;
-    srand(time(0));
-
     if (matchesRemaining > 3)
         ans = (rand() % 3) + 1;
     else if (matchesRemaining == 2)
@@ -85,7 +84,10 @@ int Player(int matchesRemaining)
         else if(ans > 0 && ans < 3 && matchesRemaining == 2)
             return matchesRemaining-ans;
         else if(ans > 0 && ans < 2 && matchesRemaining == 1)
+        { 
             printf("You Lose!");
+            exit(0);
+        }
         else
             printf("Error, Please pick a number between 1-3\n");
     }

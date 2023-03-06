@@ -12,15 +12,12 @@ int main()
 void PrintOutAlphabet()
 {
 	int const alphabetCount = 26;
-	char text[alphabetCount];
+	char text[alphabetCount] = { };
 
 	for (size_t i = 0; i < alphabetCount; ++i)
 	{
 		text[i] = 65+i;
 	}
-
-	for (size_t i = 0; i < alphabetCount; ++i)
-	{
-		printf("%c ", text[i]);
-	}
+	//text[alphabetCount] = 0;
+		printf("%s ", text);
 }
