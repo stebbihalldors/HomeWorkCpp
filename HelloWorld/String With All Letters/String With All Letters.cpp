@@ -11,13 +11,13 @@ int main()
 
 void PrintOutAlphabet()
 {
-	int const alphabetCount = 26;
+	int const alphabetCount = 27;
 	char text[alphabetCount] = { };
 
 	for (size_t i = 0; i < alphabetCount; ++i)
 	{
 		text[i] = 65+i;
 	}
-	//text[alphabetCount] = 0;
-		printf("%s ", text);
+	text[alphabetCount-1] = '\0';
+	printf("%s ", text);
 }
