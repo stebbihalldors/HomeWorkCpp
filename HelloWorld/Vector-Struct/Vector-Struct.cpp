@@ -10,12 +10,12 @@ void Add(Vector2D,Vector2D);
 
 int main()
 {
-    Vector2D vector1{};
-    Vector2D vector2{};
-    vector1.x = 5;
+    Vector2D vector1{5,3};
+    Vector2D vector2{3,5};
+    /*vector1.x = 5;
     vector1.y = 3;
     vector2.x = 3;
-    vector2.y = 5;
+    vector2.y = 5;*/
     Add(vector1, vector2);
 }
 
