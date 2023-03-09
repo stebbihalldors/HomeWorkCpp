@@ -4,8 +4,8 @@
 struct Employee {
     int personnummer;
     int phoneNumber;
-    char firstName[20];
-    char lastName[20];
+    char firstName[10];
+    char lastName[10];
     int joinDate;
     char gender;
     int salary;
