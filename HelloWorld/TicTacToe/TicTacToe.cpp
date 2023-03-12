@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <cstdlib>
 
 int CountEmptyCell();
 void FillEmptyCell(int skip);
@@ -19,9 +20,11 @@ char arr[3][3];
 char lastToDo;
 int countMoves = 0;
 
+
 int main()
 {
-    printf("Welcome to Tic-Tac-Toe!");
+    srand(time(0));
+    printf("Welcome to Tic-Tac-Toe!\n");
     SetGameBoard();
     int gameChoice = GameMode();
 
@@ -83,10 +86,11 @@ int main()
         printf("AI O:\n");
         lastToDo = 'O';
         //Check if empty for AI guess
-        int skip = Random.Shared.Next(0, CountEmptyCell());
+        //int skip = Random.Shared.Next(0, CountEmptyCell());
+        int skip = (rand() & CountEmptyCell());
         FillEmptyCell(skip);
         countMoves++;
-    }
+    } //ans = (rand() % 3) + 1
 
     void AiHard()
     {
@@ -203,7 +207,8 @@ int main()
     void Attack()
     {
         //Random when both 'X' And 'O' count are 1 
-        int skip = Random.Shared.Next(0, CountEmptyCell());
+        //int skip = Random.Shared.Next(0, CountEmptyCell());
+        int skip = (rand() & CountEmptyCell());
         FillEmptyCell(skip);
     }
 
@@ -275,7 +280,7 @@ int main()
                 printf("-----\n");
             }
         }
-        Console.WriteLine();
+        printf("\n");
 
         //Todo: Move to a better place...
         if (WinCondition())
@@ -304,7 +309,7 @@ int main()
                 printf("-----\n");
             }
         }
-        Console.WriteLine();
+        printf("\n");
     }
 
     bool WinCondition()
