@@ -33,6 +33,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15-Left-RotateArray", "15-L
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "17-ArrayFloatAverage", "17-ArrayFloatAverage\17-ArrayFloatAverage.vcxproj", "{086773DA-5C7F-4367-9BBD-3D8DAD630D3E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "18-CountingWords", "CountingWords\CountingWords.vcxproj", "{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -161,6 +163,14 @@ Global
 		{086773DA-5C7F-4367-9BBD-3D8DAD630D3E}.Release|x64.Build.0 = Release|x64
 		{086773DA-5C7F-4367-9BBD-3D8DAD630D3E}.Release|x86.ActiveCfg = Release|Win32
 		{086773DA-5C7F-4367-9BBD-3D8DAD630D3E}.Release|x86.Build.0 = Release|Win32
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Debug|x64.ActiveCfg = Debug|x64
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Debug|x64.Build.0 = Debug|x64
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Debug|x86.Build.0 = Debug|Win32
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Release|x64.ActiveCfg = Release|x64
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Release|x64.Build.0 = Release|x64
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Release|x86.ActiveCfg = Release|Win32
+		{F3167F2D-2C87-45CA-976F-FB6456DCA6DC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
