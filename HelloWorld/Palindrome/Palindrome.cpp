@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstdio>
 #include <array>
-#include <stdio.h>
-#include <string.h>
 using namespace std;
 
 int Palindrome(char* arr, size_t length);
