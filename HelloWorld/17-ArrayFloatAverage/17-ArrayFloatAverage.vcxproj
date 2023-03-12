@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{639bd701-1354-478f-bd6d-6bf540ac6f80}</ProjectGuid>
-    <RootNamespace>PointerSwapFunctions</RootNamespace>
+    <ProjectGuid>{086773da-5c7f-4367-9bbd-3d8dad630d3e}</ProjectGuid>
+    <RootNamespace>My17ArrayFloatAverage</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>16-Pointer Swap Functions</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Pointer Swap Functions.cpp" />
+    <ClCompile Include="17-ArrayFloatAverage.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
