@@ -137,18 +137,17 @@ int main()
         countMoves++;
     }
 
-    bool Test(int a, int b, bool c, int counter)
-    {
-        if (counter == 2 && c)
-        {
-            arr[a][b] = 'O';
-            return true;
-        }
-        return false;
-    }
 
     bool Guess(char who)
     {
+        int tala1 = 0;
+        int tala2 = 0;
+        int tala3 = 0;
+        int tala4 = 0;
+        int tala5 = 0;
+        int tala6 = 0;
+        int tala7 = 0;
+        int tala8 = 0;
         for (int i = 0; i < 3; i++)
         {
             int decreaser = 2;
@@ -156,49 +155,66 @@ int main()
             int winCounterCol = 0;
             int winCounterDiagonal = 0;
             int winCounterOtherDiag = 0;
+            bool hasEmpty = false;
+            bool hasEmpty2 = false;
+            bool hasEmpty3 = false;
+            bool hasEmpty4 = false;
             for (int j = 0; j < 3; j++)
             {
                 if (arr[j][i] == who)
-                {
                     winCounterCol++;
-                    if (winCounterCol == 2)
-                        if (Test(j, i, true, winCounterCol))
-                            return true;
-                }
                 else if (arr[j][i] == ' ')
-                    if (Test(j, i, true, winCounterCol))
-                        return true;
+                {
+                    tala1 = j;
+                    tala2 = i;
+                    hasEmpty = true;
+                }
                 if (arr[i][j] == who)
-                {
                     winCounterRow++;
-                    if (winCounterRow == 2)
-                        if (Test(i, j, true, winCounterRow))
-                            return true;
-                }
                 else if (arr[i][j] == ' ')
-                    if (Test(i, j, true, winCounterRow))
-                        return true;
+                {
+                    tala3 = i;
+                    tala4 = j;
+                    hasEmpty2 = true;
+                }
                 if (arr[j][j] == who)
-                {
                     winCounterDiagonal++;
-                    if (winCounterDiagonal == 2)
-                        if (Test(j, j, true, winCounterDiagonal))
-                            return true;
-                }
                 else if (arr[j][j] == ' ')
-                    if (Test(j, j, true, winCounterDiagonal))
-                        return true;
-                if (arr[j][decreaser] == who)
                 {
-                    winCounterOtherDiag++;
-                    if (winCounterOtherDiag == 2)
-                        if (Test(j, decreaser, true, winCounterOtherDiag))
-                            return true;
+                    tala5 = j;
+                    tala6 = j;
+                    hasEmpty3 = true;
                 }
+                if (arr[j][decreaser] == who)
+                    winCounterOtherDiag++;
                 else if (arr[j][decreaser] == ' ')
-                    if (Test(j, decreaser, true, winCounterOtherDiag))
-                        return true;
+                {
+                    tala7 = j;
+                    tala8 = decreaser;
+                    hasEmpty4 = true;
+                }
                 decreaser--;
+            }
+
+            if (winCounterCol == 2 && hasEmpty)
+            {
+                arr[tala1][tala2] = 'O';
+                return true;
+            }
+            if (winCounterRow == 2 && hasEmpty2)
+            {
+                arr[tala3][tala4] = 'O';
+                return true;
+            }
+            if (winCounterDiagonal == 2 && hasEmpty3)
+            {
+                arr[tala5][tala6] = 'O';
+                return true;
+            }
+            if (winCounterOtherDiag == 2 && hasEmpty4)
+            {
+                arr[tala7][tala8] = 'O';
+                return true;
             }
         }
         return false;
