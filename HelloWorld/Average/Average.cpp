@@ -8,8 +8,9 @@ void Average(int* current, size_t length);
 
 int main()
 {
-    int arr[9];
-    Average(arr, 9);
+    int const numberLength = 9;
+    int arr[numberLength];
+    Average(arr, numberLength);
 
 }
 
@@ -18,15 +19,10 @@ void Average(int* current, size_t length)
     float average = 0;
     for (size_t i = 0; i < length; ++i)
     {
-        cout << "Please put 9 numbers! Number: " << i+1 << endl;
+        cout << "Please put " << length << " numbers! Number: " << i+1 << endl;
         scanf_s("%d", &current[i]);
         average += current[i];
     }
-    cout << "The average of the 9 numbers you entered is: " << average / length << endl;
-
-   /* for (size_t i = 0; i < length; i++)
-    {
-        cout << current[i] << endl;
-    }*/
-   
+    cout << "The total of your entered numbers is: " << average << endl;
+    cout << "The average of the "<< length << " numbers you entered is : " << average / length << endl;
 }
