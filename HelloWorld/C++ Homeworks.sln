@@ -27,7 +27,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointer Swap Functions", "P
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TicTacToe", "TicTacToe\TicTacToe.vcxproj", "{ADE95FDD-48C7-40C1-AA8E-0494AEFB6795}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Average", "Average\Average.vcxproj", "{55684F52-CC9C-433C-B86E-1F7E4CE651F2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "14-Average", "Average\Average.vcxproj", "{55684F52-CC9C-433C-B86E-1F7E4CE651F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "15-Left-RotateArray", "15-Left-RotateArray\15-Left-RotateArray.vcxproj", "{B40BBC11-93BD-4483-A54D-8750B8CE6B20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,14 @@ Global
 		{55684F52-CC9C-433C-B86E-1F7E4CE651F2}.Release|x64.Build.0 = Release|x64
 		{55684F52-CC9C-433C-B86E-1F7E4CE651F2}.Release|x86.ActiveCfg = Release|Win32
 		{55684F52-CC9C-433C-B86E-1F7E4CE651F2}.Release|x86.Build.0 = Release|Win32
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Debug|x64.ActiveCfg = Debug|x64
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Debug|x64.Build.0 = Debug|x64
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Debug|x86.ActiveCfg = Debug|Win32
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Debug|x86.Build.0 = Debug|Win32
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Release|x64.ActiveCfg = Release|x64
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Release|x64.Build.0 = Release|x64
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Release|x86.ActiveCfg = Release|Win32
+		{B40BBC11-93BD-4483-A54D-8750B8CE6B20}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
