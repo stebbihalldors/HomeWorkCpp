@@ -3,7 +3,7 @@
 #include <array>
 using namespace std;
 
-int Palindrome(char* arr, size_t length);
+bool Palindrome(char* arr, size_t length);
 
 int main()
 {
@@ -14,24 +14,18 @@ int main()
 	printf("%d\n", Palindrome(arr2, size(arr2)));
 }
 
-int Palindrome(char* arr, size_t length)
+bool Palindrome(char* arr, size_t length)
 {
-	char* front = arr;
-	char* back = arr + length-1;
-	for (size_t i = 0; i < length; i++)
-	{
-		if (*front == *back)
-		{
-			front++;
-			back--;
-		}
-		else
-			break;
-	}
+    char* front = arr - 1;
+    char* back = arr + length - 1;
 
-	if (front > back)
-		return 1;
-	else
-		return 0;
+    while (--back > ++front)
+    {
+        if (*front != *back) return false;
+
+        front++;
+        back--;
+    }
+    return true;
 }
 

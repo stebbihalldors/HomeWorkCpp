@@ -24,6 +24,7 @@
     <ProjectGuid>{f927e7df-e0b0-44d9-9320-8bfb93f44524}</ProjectGuid>
     <RootNamespace>SwapFunctionWithReference</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>22-SwapFunctionWithReference</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
