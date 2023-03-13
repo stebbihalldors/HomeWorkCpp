@@ -2,23 +2,25 @@
 #include <cstdio>
 using namespace std;
 
-void Peeps();
-char* GetName();
-
 struct Person {
-    char* name = new char[100];
+    //char* name = new char[100];
+    char name[100];
 };
+
+void Peeps();
+//char* GetName();
+Person* GetName();
 
 int main()
 {
     Peeps();
 }
 
-char* GetName() {
-    Person person;
+Person* GetName() {
+    Person* person = new Person();
     printf("What's the next person supposed to be called?\n");
-    scanf_s("%s", person.name, 100);
-    return person.name;
+    scanf_s("%s", person->name, 100);
+    return person;
 }
 
 void Peeps()
@@ -29,8 +31,8 @@ void Peeps()
     char** names = new char*[numberOfPeople];
     for (size_t i = 0; i < numberOfPeople; i++)
     {
-        char* name = GetName();
-        names[i] = name;
+        Person* person = GetName();
+        names[i] = person->name;
     }
 
     printf("Total amount of people: %d\n", numberOfPeople);
