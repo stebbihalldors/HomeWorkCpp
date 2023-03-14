@@ -1,7 +1,7 @@
 #include <iostream>
 #include <functional>
 
-enum Operation {
+enum class Operation {
     Add,
     Subtract,
     Multiply,
@@ -14,19 +14,13 @@ private:
     int number2;
     std::function<int(int, int)> op;
 
-
 public:
     Calculator()
     {
         number1 = 0;
         number2 = 0;
+        op = std::plus<int>();
     }
-
-    /*Calculator(int a, int b)
-    {
-        number1 = a;
-        number2 = b;
-    }*/
 
     ~Calculator()
     {
@@ -34,25 +28,28 @@ public:
     }
 
     void SetNumber(int a) {
-        if (number1 == 0)
+        if (number1 != 0)
+            number1 = (number1 * 10)+a;
+        else if (number1 == 0)
             number1 = a;
-        else
-            number2 = a;
     }
 
     int GetNumber() {
-        return op(number1,number2);
+        return op(number2, number1); 
     }
 
     void SetOperation(Operation a)
     {
+
+        number2 = op(number1, number2);
+        number1 = 0;
         switch (a) {
-        case 0:
-            //std::function<int(int, int)> op = std::plus<int>();
+        case Operation::Add:
             op = std::plus<int>();
             break;
-        case 1:
+        case Operation::Subtract:
             op = std::minus<int>();
+            break;
         default:
             break;
         }
@@ -63,18 +60,16 @@ public:
         number1 = 0;
         number2 = 0;
     }
-    
 };
 
 int main()
-{/*
-    Calculator calc(2, 5);
-    printf("%d\n", calc.GetNumber());
-    */
+{
     Calculator calculator;
     calculator.SetNumber(5);
     calculator.SetOperation(Operation::Add);
     calculator.SetNumber(3);
+    calculator.SetOperation(Operation::Subtract);
+    calculator.SetNumber(2);
     printf("%d\n", calculator.GetNumber());
 
     calculator.Clear();
