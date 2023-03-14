@@ -12,14 +12,13 @@ class Calculator{
 private:
     int number1;
     int number2;
-    std::function<int(int, int)> op;
 
 public:
     Calculator()
     {
         number1 = 0;
         number2 = 0;
-        op = std::plus<int>();
+        a = Operation::Add;
     }
 
     ~Calculator()
@@ -30,35 +29,34 @@ public:
     void SetNumber(int a) {
         if (number1 != 0)
             number1 = (number1 * 10)+a;
-        else if (number1 == 0)
+        else
             number1 = a;
     }
-
+    Operation a;
     int GetNumber() {
-        return op(number2, number1); 
-    }
-
-    void SetOperation(Operation a)
-    {
-
-        number2 = op(number1, number2);
-        number1 = 0;
         switch (a) {
         case Operation::Add:
-            op = std::plus<int>();
-            break;
+            return number1 + number2;
         case Operation::Subtract:
-            op = std::minus<int>();
+            return number2 - number1;
             break;
         default:
             break;
         }
     }
 
+    void SetOperation(Operation a)
+    {
+        number2 = GetNumber();
+        number1 = 0;
+        this->a = a;
+    }
+
     void Clear()
     {
         number1 = 0;
         number2 = 0;
+        a = Operation::Add;
     }
 };
 
@@ -76,6 +74,20 @@ int main()
     calculator.SetNumber(5);
     calculator.SetOperation(Operation::Subtract);
     calculator.SetNumber(3);
+    printf("%d\n", calculator.GetNumber());
+
+    calculator.Clear();
+    calculator.SetNumber(5);
+    calculator.SetNumber(5);
+    calculator.SetNumber(5);
+    calculator.SetOperation(Operation::Subtract);
+    calculator.SetNumber(3);
+    calculator.SetNumber(3);
+    calculator.SetNumber(3);
+    printf("%d\n", calculator.GetNumber());
+
+    calculator.Clear();
+    calculator.SetNumber(5);
     printf("%d\n", calculator.GetNumber());
 
 }
