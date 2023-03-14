@@ -23,6 +23,7 @@ public:
         printf("non-empty string is constructed: %s\n", defaultText);
         buffer = new char[maxsize];
         maxSize = maxsize;
+        length = 0;
         Append(defaultText);
     }
     ~String()
@@ -34,17 +35,21 @@ public:
 
     void Append(char* text)
     {
+        //Need to test the length+length of text>maxsize then exception
         if (maxSize < length)
             throw exception("out of bounds");
        
-        int numberOfChars = 0;
+        //add each char until \0 into buffer and then put length += text;
+       // int numberOfChars = 0;
         while (*text != '\0') {
             buffer[length] = *text;
-            numberOfChars++;
-
+            length++;
+            //numberOfChars++;
+            
             text++;
         }
-        length += numberOfChars;
+        printf("length %d\n", length);
+       // length += numberOfChars;
     }
 
     void AppendLine(char* text)
@@ -54,7 +59,7 @@ public:
 
     void Print()
     {
-        printf("%s", buffer-(maxSize-length));
+        printf("%s\n", buffer);
     }
 
     char* GetString()
@@ -66,7 +71,10 @@ public:
 int main()
 {
     char arr[]{ "anna" };
-    String string(arr,size(arr));
+    String string(arr,100);
 
     string.Print();
+    
+    char arr2[]{ "test" };
+    string.Append(arr2);
 }
