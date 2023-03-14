@@ -45,6 +45,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "22-SwapFunctionWithReferenc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "23-MemoryManagement", "23-MemoryManagement\23-MemoryManagement.vcxproj", "{E207A9A6-33BE-4B39-805D-64E91FB23ED5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "24-Calculator", "24-Calculator\24-Calculator.vcxproj", "{19A029F6-006D-4DDD-B945-1C3B30219DE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -221,6 +223,14 @@ Global
 		{E207A9A6-33BE-4B39-805D-64E91FB23ED5}.Release|x64.Build.0 = Release|x64
 		{E207A9A6-33BE-4B39-805D-64E91FB23ED5}.Release|x86.ActiveCfg = Release|Win32
 		{E207A9A6-33BE-4B39-805D-64E91FB23ED5}.Release|x86.Build.0 = Release|Win32
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Debug|x64.ActiveCfg = Debug|x64
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Debug|x64.Build.0 = Debug|x64
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Debug|x86.ActiveCfg = Debug|Win32
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Debug|x86.Build.0 = Debug|Win32
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Release|x64.ActiveCfg = Release|x64
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Release|x64.Build.0 = Release|x64
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Release|x86.ActiveCfg = Release|Win32
+		{19A029F6-006D-4DDD-B945-1C3B30219DE9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
