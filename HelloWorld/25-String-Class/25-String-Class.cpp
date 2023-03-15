@@ -14,14 +14,14 @@ public:
     String(size_t maxsize)
     {
         printf("empty string is constructed!");
-        buffer = new char[maxsize];
+        buffer = new char[maxsize]{};
         maxSize = maxsize;
         length = 0;
     }
     String(char* defaultText, size_t maxsize)
     {
         printf("non-empty string is constructed: %s\n", defaultText);
-        buffer = new char[maxsize];
+        buffer = new char[maxsize]{};
         maxSize = maxsize;
         length = 0;
         Append(defaultText);
@@ -62,13 +62,17 @@ public:
 
     void Print()
     {
+        /*
         for (size_t i = 0; i < length; i++)
             printf("%c", buffer[i]);
         printf("\n");
+        */
+        printf("%s\n", buffer);
     }
 
     char* GetString()
     {
+        //return buffer with \0?
         return buffer;
     }
 };
@@ -77,6 +81,7 @@ int main()
 {
     char arr[]{ "anna" };
     String string(arr,100);
+    printf("%s", string.GetString());
     string.Print();
     
     char arr2[]{ "test" };
@@ -86,4 +91,5 @@ int main()
     char arr3[]{ "test3" };
     string.AppendLine(arr3);
     string.Print();
+
 }
