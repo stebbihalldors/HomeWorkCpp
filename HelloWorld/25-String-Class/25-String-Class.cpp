@@ -50,7 +50,14 @@ public:
 
     void AppendLine(char* text)
     {
-
+        while (*text != '\0') {
+            buffer[length] = *text;
+            length++;
+            text++;
+        }
+        buffer[length] = '\n';
+        length++;
+        printf("length %d\n", length);
     }
 
     void Print()
@@ -70,11 +77,13 @@ int main()
 {
     char arr[]{ "anna" };
     String string(arr,100);
-
     string.Print();
     
     char arr2[]{ "test" };
     string.Append(arr2);
-
+    string.Print();
+    
+    char arr3[]{ "test3" };
+    string.AppendLine(arr3);
     string.Print();
 }
