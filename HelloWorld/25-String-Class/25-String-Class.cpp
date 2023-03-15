@@ -50,12 +50,6 @@ public:
 
     void AppendLine(char* text)
     {
-        /*
-        while (*text != '\0') {
-            buffer[length] = *text;
-            length++;
-            text++;
-        }*/
         Append(text);
         buffer[length] = '\n';
         length++;
@@ -64,11 +58,6 @@ public:
 
     void Print()
     {
-        /*
-        for (size_t i = 0; i < length; i++)
-            printf("%c", buffer[i]);
-        printf("\n");
-        */
         printf("%s\n", buffer);
     }
 
