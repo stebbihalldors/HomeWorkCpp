@@ -50,11 +50,13 @@ public:
 
     void AppendLine(char* text)
     {
+        /*
         while (*text != '\0') {
             buffer[length] = *text;
             length++;
             text++;
-        }
+        }*/
+        Append(text);
         buffer[length] = '\n';
         length++;
         printf("length %d\n", length);
@@ -72,7 +74,7 @@ public:
 
     char* GetString()
     {
-        //return buffer with \0?
+        //return buffer with \0? and some cost or something so they cant change the values of the string with the pointer
         return buffer;
     }
 };
