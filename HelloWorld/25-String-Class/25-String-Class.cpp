@@ -39,17 +39,13 @@ public:
         if (maxSize < length)
             throw exception("out of bounds");
        
-        //add each char until \0 into buffer and then put length += text;
-       // int numberOfChars = 0;
+        //add each char until \0 into buffer and add length += text;
         while (*text != '\0') {
             buffer[length] = *text;
             length++;
-            //numberOfChars++;
-            
             text++;
         }
         printf("length %d\n", length);
-       // length += numberOfChars;
     }
 
     void AppendLine(char* text)
@@ -59,7 +55,9 @@ public:
 
     void Print()
     {
-        printf("%s\n", buffer);
+        for (size_t i = 0; i < length; i++)
+            printf("%c", buffer[i]);
+        printf("\n");
     }
 
     char* GetString()
@@ -77,4 +75,6 @@ int main()
     
     char arr2[]{ "test" };
     string.Append(arr2);
+
+    string.Print();
 }
