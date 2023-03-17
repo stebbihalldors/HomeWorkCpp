@@ -39,7 +39,10 @@ public:
             return number1 + number2;
         case Operation::Subtract:
             return number2 - number1;
-            break;
+        case Operation::Multiply:
+            return number1 * number2;
+        case Operation::Divide:
+            return number2 / number1;
         default:
             break;
         }
