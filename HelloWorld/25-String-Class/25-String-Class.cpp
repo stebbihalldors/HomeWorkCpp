@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <array>
+#include <vector>
 using namespace std;
 
 
@@ -18,7 +19,7 @@ public:
         maxSize = maxsize;
         length = 0;
     }
-    String(char* defaultText, size_t maxsize)
+    String(const char* defaultText, size_t maxsize)
     {
         printf("non-empty string is constructed: %s\n", defaultText);
         buffer = new char[maxsize]{};
@@ -32,13 +33,28 @@ public:
         //delete buffer
         delete[] buffer;
     }
+    String(const String& original) 
+    {
+        printf("String %d gets copied to new instance.\n", original.length);
+        length = original.length;
+        maxSize = original.maxSize;
+        buffer = new char[maxSize];
+    }
 
-    void Append(char* text)
+    String& operator=(const String& other)
+    {
+        printf("Person %d gets copied to an extisting instance\n", other.length);
+        delete[] buffer;
+        buffer = new char[maxSize];
+        return *this;
+    }
+
+    void Append(const char* text)
     {  
         //iterate once to calculate the length
         //then memcpy to copy the whole block to the correct address
         //would i need then a temp to hold the pointer to the correct address?
-        char* temp = text;
+        const char* temp = text;
         int charCounter{ 0 };
         while (*temp != '\0') {
             charCounter++;
@@ -85,7 +101,7 @@ public:
 };
 
 int main()
-{
+{/*
     char arr[]{ "anna" };
     String string(arr,100);
     printf("%s", string.GetString());
@@ -98,9 +114,10 @@ int main()
     char arr3[]{ "test3" };
     string.AppendLine(arr3);
     string.Print();
-
-    /* //here for testing the copy and move if it all works.
-    std::vector<String> heroes;
+    
+    
+    //here for testing the copy and move if it all works.
+    vector<String> heroes;
     heroes.push_back(String{ "Hercules",100 });
     heroes.push_back(String{ "Odysseus",100 });
     {
@@ -109,5 +126,14 @@ int main()
     }
     return 0;
     */
+
+    String a{ "Hello", 7 };
+    a.Print(); // a is fine
+    {
+        String b = a;
+        b = a;
+        a.Print(); // a is still fine
+    }
+    a.Print(); // now, a is broken!! :o
 
 }
