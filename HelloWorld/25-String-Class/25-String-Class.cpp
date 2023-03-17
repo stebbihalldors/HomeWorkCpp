@@ -38,7 +38,7 @@ public:
         printf("String %s gets copied to new instance.\n", original.buffer);
         length = original.length;
         maxSize = original.maxSize;
-        buffer = new char[maxSize] {};
+        buffer = new char[original.maxSize] {};
         Copy(original);
         
         printf("String %s gets copied to new instance.\n", buffer); 
@@ -46,10 +46,12 @@ public:
     
     void Copy(const String& a)
     {
-        int counter = 0;
-        while (*a.buffer != '\0') {
-            buffer[counter] = a.buffer[counter];
-            counter++;
+        char* temp = a.buffer;
+        int count = 0;
+        while (*temp != '\0') {
+            buffer[count] = *temp;
+            count++;
+            temp++;
         }
     }
 
@@ -60,6 +62,7 @@ public:
         length = other.length;
         maxSize = other.maxSize;
         buffer = new char[maxSize];
+        Copy(other);
         return *this;
     }
 
