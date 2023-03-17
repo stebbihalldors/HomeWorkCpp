@@ -35,16 +35,30 @@ public:
     }
     String(const String& original) 
     {
-        printf("String %d gets copied to new instance.\n", original.length);
+        printf("String %s gets copied to new instance.\n", original.buffer);
         length = original.length;
         maxSize = original.maxSize;
-        buffer = new char[maxSize];
+        buffer = new char[maxSize] {};
+        Copy(original);
+        
+        printf("String %s gets copied to new instance.\n", buffer); 
+    }
+    
+    void Copy(const String& a)
+    {
+        int counter = 0;
+        while (*a.buffer != '\0') {
+            buffer[counter] = a.buffer[counter];
+            counter++;
+        }
     }
 
     String& operator=(const String& other)
     {
-        printf("Person %d gets copied to an extisting instance\n", other.length);
+        printf("String %s gets copied to an extisting instance(%s)\n", other.buffer, buffer);
         delete[] buffer;
+        length = other.length;
+        maxSize = other.maxSize;
         buffer = new char[maxSize];
         return *this;
     }
@@ -60,12 +74,13 @@ public:
             charCounter++;
             temp++;
         }
-        printf("length: %d\n", length);
+       
         if (maxSize < length+charCounter)
             throw exception("out of bounds\n");
 
         memcpy(buffer+length, text, charCounter);
         length += charCounter;
+        printf("length: %d\n", length);
 
         /*
         //add each char until \0 into buffer and add length += text;
@@ -133,6 +148,7 @@ int main()
         String b = a;
         b = a;
         a.Print(); // a is still fine
+        b.Print();
     }
     a.Print(); // now, a is broken!! :o
 
