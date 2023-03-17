@@ -40,8 +40,6 @@ public:
         maxSize = original.maxSize;
         buffer = new char[original.maxSize] {};
         Copy(original);
-        
-        printf("String %s gets copied to new instance.\n", buffer); 
     }
     
     void Copy(const String& a)
@@ -61,7 +59,7 @@ public:
         delete[] buffer;
         length = other.length;
         maxSize = other.maxSize;
-        buffer = new char[maxSize];
+        buffer = new char[maxSize] {};
         Copy(other);
         return *this;
     }
