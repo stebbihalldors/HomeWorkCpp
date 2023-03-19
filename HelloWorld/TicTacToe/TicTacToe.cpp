@@ -6,7 +6,7 @@ int CountEmptyCell();
 void FillEmptyCell(int skip);
 void AiRandom();
 void AiHard();
-bool Test(int a, int b, bool c, int counter);
+//bool Test(int a, int b, bool c, int counter);
 bool Guess(char who);
 void Attack();
 int GameMode();
@@ -19,7 +19,6 @@ bool WinCondition();
 char arr[3][3];
 char lastToDo;
 int countMoves = 0;
-
 
 int main()
 {

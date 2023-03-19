@@ -68,7 +68,7 @@ public:
     {  
         //iterate once to calculate the length
         //then memcpy to copy the whole block to the correct address
-        //would i need then a temp to hold the pointer to the correct address?
+        //I need then a temp to move the pointer to the end of string
         const char* temp = text;
         int charCounter{ 0 };
         while (*temp != '\0') {
@@ -143,13 +143,24 @@ int main()
     return 0;
     */
 
-    String a{ "Hello", 7 };
+    String a{ "Hello", 15 };
+    String c{ "World", 15 };
     a.Print(); // a is fine
     {
         String b = a;
         b = a;
+        c = a;
         a.Print(); // a is still fine
         b.Print();
+        c.Print();
+
+        a.Append(" test");
+        b.Append(" lest");
+        c.Append(" hest");
+
+        a.Print(); // a is still fine
+        b.Print();
+        c.Print();
     }
     a.Print(); // now, a is broken!! :o
 
