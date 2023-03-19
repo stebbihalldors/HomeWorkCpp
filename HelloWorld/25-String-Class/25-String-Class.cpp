@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <array>
 #include <vector>
+#include <utility>
 using namespace std;
 
 
@@ -31,7 +32,7 @@ public:
     {
         printf("String gets deconstructed\n");
         //delete buffer
-        delete[] buffer;
+        if(buffer) delete[] buffer;
     }
     String(const String& original) 
     {
@@ -62,6 +63,15 @@ public:
         buffer = new char[maxSize] {};
         Copy(other);
         return *this;
+    }
+
+    String(String&& other) noexcept
+    {
+        printf("Moving %s\n", other.buffer);
+        maxSize = other.maxSize;
+        length = other.maxSize;
+        buffer = other.buffer;
+        other.buffer = nullptr;    
     }
 
     void Append(const char* text)
@@ -117,7 +127,9 @@ public:
 };
 
 int main()
-{/*
+{
+    /* 
+     //Tests for creating the String class..
     char arr[]{ "anna" };
     String string(arr,100);
     printf("%s", string.GetString());
@@ -130,19 +142,8 @@ int main()
     char arr3[]{ "test3" };
     string.AppendLine(arr3);
     string.Print();
-    
-    
-    //here for testing the copy and move if it all works.
-    vector<String> heroes;
-    heroes.push_back(String{ "Hercules",100 });
-    heroes.push_back(String{ "Odysseus",100 });
-    {
-        String prometheus{ "Prometheus",100 };
-        heroes.push_back(std::move(prometheus));
-    }
-    return 0;
-    */
 
+    //Tests for copying the String class..
     String a{ "Hello", 15 };
     String c{ "World", 15 };
     a.Print(); // a is fine
@@ -163,5 +164,15 @@ int main()
         c.Print();
     }
     a.Print(); // now, a is broken!! :o
+    */
 
+    //Tests for Moving the String class..
+    vector<String> heroes;
+    heroes.push_back(String{ "Hercules",100 });
+    heroes.push_back(String{ "Odysseus",100 });
+    {
+        String prometheus{ "Prometheus",100 };
+        heroes.push_back(std::move(prometheus));
+    }
+    return 0;
 }
