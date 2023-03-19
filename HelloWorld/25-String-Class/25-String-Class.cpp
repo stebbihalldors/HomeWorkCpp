@@ -56,6 +56,7 @@ public:
 
     String& operator=(const String& other)
     {
+        if (this == &other) return *this;
         printf("String %s gets copied to an extisting instance(%s)\n", other.buffer, buffer);
         delete[] buffer;
         length = other.length;
@@ -72,6 +73,16 @@ public:
         length = other.maxSize;
         buffer = other.buffer;
         other.buffer = nullptr;    
+    }
+
+    String& operator=(String&& other) noexcept 
+    {
+        if (this == &other) return *this;
+        maxSize = other.maxSize;
+        length = other.maxSize;
+        buffer = other.buffer;
+        other.buffer = nullptr;
+        return *this;
     }
 
     void Append(const char* text)
