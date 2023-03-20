@@ -8,8 +8,9 @@ using namespace std;
 
 int main()
 {
-    /* 
+    
      //Tests for creating the String class..
+    printf("Tests for creating the string class: \n");
     char arr[]{ "anna" };
     String string(arr,100);
     printf("%s", string.GetString());
@@ -24,6 +25,7 @@ int main()
     string.Print();
 
     //Tests for copying the String class..
+    printf("Tests for copying the string class: \n");
     String a{ "Hello", 15 };
     String c{ "World", 15 };
     a.Print(); // a is fine
@@ -44,9 +46,10 @@ int main()
         c.Print();
     }
     a.Print(); // now, a is broken!! :o
-    */
+    
 
     //Tests for Moving the String class..
+    printf("Tests for Moving the string class: \n");
     vector<String> heroes;
     heroes.push_back(String{ "Hercules",100 });
     heroes.push_back(String{ "Odysseus",100 });

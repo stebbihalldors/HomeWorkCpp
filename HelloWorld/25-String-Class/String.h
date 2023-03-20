@@ -3,11 +3,11 @@ class String {
 private:
     int length;
     char* buffer;
-    std::size_t maxSize;
+    size_t maxSize;
 
 public:
-    String(std::size_t maxsize);
-    String(const char* defaultText, std::size_t maxsize);
+    String(size_t maxsize);
+    String(const char* defaultText, size_t maxsize);
     ~String();
     String(const String& original);
     void Copy(const String& a);

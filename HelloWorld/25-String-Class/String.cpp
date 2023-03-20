@@ -1,10 +1,9 @@
-#include <iostream>
-#include <cstdio>
-#include <array>
-#include <vector>
-#include <utility>
-using namespace std;
 #include "String.h"
+#include <cstdio>
+#include <exception>
+#include <string.h>
+
+using namespace std;
 
 
 String::String(size_t maxsize)
