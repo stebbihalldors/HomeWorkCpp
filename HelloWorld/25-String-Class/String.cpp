@@ -61,7 +61,7 @@ String& String::operator=(const String& other)
 
 String::String(String&& other) noexcept
 {
-    printf("Moving with copy constructor: %s\n", other.buffer);
+    printf("Moving with move constructor: %s\n", other.buffer);
     maxSize = other.maxSize;
     length = other.maxSize;
     buffer = other.buffer;
@@ -98,18 +98,6 @@ void String::Append(const char* text)
     memcpy(buffer + length, text, charCounter);
     length += charCounter;
     printf("length: %d\n", length);
-
-    /*
-    //add each char until \0 into buffer and add length += text;
-    while (*text != '\0') {
-        if (maxSize < length)
-            throw exception("out of bounds\n");
-        buffer[length] = *text;
-        length++;
-        text++;
-    }
-    printf("length %d\n", length);
-    */
 }
 
 void String::AppendLine(char* text)

@@ -25,7 +25,7 @@ int main()
     string.Print();
 
     //Tests for copying the String class..
-    printf("Tests for copying the string class: \n");
+    printf("\nTests for copying the string class: \n");
     String a{ "Hello", 15 };
     String c{ "World", 15 };
     a.Print(); // a is fine
@@ -49,12 +49,14 @@ int main()
     
 
     //Tests for Moving the String class..
-    printf("Tests for Moving the string class: \n");
+    printf("\nTests for Moving the string class: \n");
     vector<String> heroes;
     heroes.push_back(String{ "Hercules",100 });
     heroes.push_back(String{ "Odysseus",100 });
     {
-        String prometheus{ "Prometheus",100 };
+        String prometheus{ "Prometheus",100 }; // Tests the move constructor
+        prometheus = String{ "Testerino",100 }; // Tests the move assignment
+
         heroes.push_back(std::move(prometheus));
     }
     return 0;
