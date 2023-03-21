@@ -3,8 +3,8 @@
 #include <array>
 #include <vector>
 #include <utility>
-using namespace std;
 #include "String.h"
+using namespace std;
 
 int main()
 {
@@ -57,7 +57,7 @@ int main()
         String prometheus{ "Prometheus",100 }; // Tests the move constructor
         prometheus = String{ "Testerino",100 }; // Tests the move assignment
 
-        heroes.push_back(std::move(prometheus));
+        heroes.push_back(move(prometheus));
     }
     return 0;
 }

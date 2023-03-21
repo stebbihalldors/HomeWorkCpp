@@ -6,18 +6,18 @@ private:
     size_t maxSize;
 
 public:
-    String(size_t maxsize);
-    String(const char* defaultText, size_t maxsize);
+    String(const size_t maxsize);
+    String(const char* defaultText, const size_t maxsize);
     ~String();
     String(const String& original);
-    void Copy(const String& a);
+    void Copy(const String& a) const;
     String& operator=(const String& other);
     String(String&& other) noexcept;
     String& operator=(String&& other) noexcept;
 
     void Append(const char* text);
-    void AppendLine(char* text);
-    void Print();
-    char* GetString();
+    void AppendLine(const char* text);
+    void Print() const;
+    char* GetString() const;
 };
 

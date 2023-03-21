@@ -6,19 +6,13 @@
 using namespace std;
 
 
-String::String(size_t maxsize)
+String::String(const size_t maxsize) : buffer{ new char[maxsize] {} }, maxSize{ maxsize }, length{ 0 }
 {
     printf("empty string is constructed!\n");
-    buffer = new char[maxsize] {};
-    maxSize = maxsize;
-    length = 0;
 }
-String::String(const char* defaultText, size_t maxsize)
+String::String(const char* defaultText, size_t maxsize) : buffer{ new char[maxsize] {} }, maxSize{ maxsize }, length{ 0 }
 {
     printf("non-empty string is constructed: %s\n", defaultText);
-    buffer = new char[maxsize] {};
-    maxSize = maxsize;
-    length = 0;
     Append(defaultText);
 }
 String::~String()
@@ -27,16 +21,13 @@ String::~String()
     //delete buffer
     if (buffer) delete[] buffer;
 }
-String::String(const String& original)
+String::String(const String& original) : length{ original.length }, maxSize{ original.maxSize }, buffer{ new char[original.maxSize] {} }
 {
     printf("String %s gets copied to new instance.\n", original.buffer);
-    length = original.length;
-    maxSize = original.maxSize;
-    buffer = new char[original.maxSize] {};
     Copy(original);
 }
 
-void String::Copy(const String& a)
+void String::Copy(const String& a) const 
 {
     char* temp = a.buffer;
     int count = 0;
@@ -59,12 +50,9 @@ String& String::operator=(const String& other)
     return *this;
 }
 
-String::String(String&& other) noexcept
+String::String(String&& other) noexcept : maxSize{ other.maxSize }, length{other.length}, buffer{other.buffer}
 {
     printf("Moving with move constructor: %s\n", other.buffer);
-    maxSize = other.maxSize;
-    length = other.maxSize;
-    buffer = other.buffer;
     other.buffer = nullptr;
 }
 
@@ -100,7 +88,7 @@ void String::Append(const char* text)
     printf("length: %d\n", length);
 }
 
-void String::AppendLine(char* text)
+void String::AppendLine(const char* text)
 {
     Append(text);
     buffer[length] = '\n';
@@ -108,12 +96,12 @@ void String::AppendLine(char* text)
     printf("length %d\n", length);
 }
 
-void String::Print()
+void String::Print() const
 {
     printf("%s\n", buffer);
 }
 
-char* String::GetString()
+char* String::GetString() const
 {
     //return buffer with \0?
     return buffer;
