@@ -61,7 +61,7 @@ String& String::operator=(const String& other)
 
 String::String(String&& other) noexcept
 {
-    printf("Moving %s\n", other.buffer);
+    printf("Moving with copy constructor: %s\n", other.buffer);
     maxSize = other.maxSize;
     length = other.maxSize;
     buffer = other.buffer;
@@ -70,7 +70,9 @@ String::String(String&& other) noexcept
 
 String& String::operator=(String&& other) noexcept
 {
+    printf("Moving with operator: %s\n", other.buffer);
     if (this == &other) return *this;
+    delete[] buffer;
     maxSize = other.maxSize;
     length = other.maxSize;
     buffer = other.buffer;
