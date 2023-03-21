@@ -1,8 +1,9 @@
 #pragma once
 class Vector3
 {
-	const float x, y, z;
+	float x, y, z;
 	friend Vector3 operator*(const float a, const Vector3& s); // scalar
+	friend Vector3 operator*=(const Vector3& s, const Vector3& t);
 
 public:
 	Vector3();
@@ -19,5 +20,13 @@ public:
 	bool operator==(const Vector3& s);
 	bool operator!=(const Vector3& s);
 	Vector3 operator-();
+	
+	Vector3 operator+=(const Vector3& s);
+	Vector3 operator-=(const Vector3& s);  
+	Vector3 operator*=(const Vector3& s);   
+	Vector3 operator/=(const Vector3& s);
+
+	Vector3 operator=(const Vector3& s);
 };
 Vector3 operator*(const float a, const Vector3& s); // scalar (needs outside class because first arguement is not the class itself)
+Vector3 operator*=(const Vector3& s, const Vector3& t);

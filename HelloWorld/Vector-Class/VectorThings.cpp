@@ -39,4 +39,19 @@ int main()
     if (v1 == t4)
         printf("jeij\n");
 
+    v1.Print();
+    v1 = v2;
+    v1.Print();
+
+    t4 = Vector3(5, 5, 5);
+
+    printf("\n\n\nWorking on:\n");
+    t3.Print();
+    t4.Print();
+    Vector3 t15 = t4 + t3;
+    t15.Print();
+    t4.Print();
+    t4 += t3;
+    t4.Print();
+    
 }
