@@ -3,7 +3,7 @@ class Vector3
 {
 	float x, y, z;
 	friend Vector3 operator*(const float a, const Vector3& s); // scalar
-	friend Vector3 operator*=(const Vector3& s, const Vector3& t);
+	friend Vector3 operator*=(const float a, const Vector3& s);
 
 public:
 	Vector3();
@@ -24,9 +24,9 @@ public:
 	Vector3 operator+=(const Vector3& s);
 	Vector3 operator-=(const Vector3& s);  
 	Vector3 operator*=(const Vector3& s);   
-	Vector3 operator/=(const Vector3& s);
+	Vector3 operator/=(float f);
 
 	Vector3 operator=(const Vector3& s);
 };
 Vector3 operator*(const float a, const Vector3& s); // scalar (needs outside class because first arguement is not the class itself)
-Vector3 operator*=(const Vector3& s, const Vector3& t);
+Vector3 operator*=(const float a, const Vector3& s);

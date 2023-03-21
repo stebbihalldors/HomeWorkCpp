@@ -3,6 +3,11 @@
 
 int main()
 {
+    Vector3 right{ 7, 14, 21 };
+    right /= 7;
+    right.Print();
+    return 0;
+
     Vector3 vector1;
     vector1.Print();
     Vector3 vector2(1, 2, 3);
@@ -53,5 +58,7 @@ int main()
     t4.Print();
     t4 += t3;
     t4.Print();
+
+
     
 }
