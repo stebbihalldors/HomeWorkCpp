@@ -12,19 +12,20 @@ public:
 	Vector3(const Vector3& original);
 	void Print() const;
 
-	Vector3 operator+(const Vector3& s);
-	Vector3 operator-(const Vector3& s);
-	float operator*(const Vector3& s);  // dotproduct
-	Vector3 operator*(const float a);   // scalar
-	Vector3 operator/(const float a);   // divide by scalar
-	bool operator==(const Vector3& s);
-	bool operator!=(const Vector3& s);
-	Vector3 operator-();
+	Vector3 operator+(const Vector3& s) const;
+	Vector3 operator-(const Vector3& s)const;
+	float operator*(const Vector3& s) const;  // dotproduct
+	Vector3 operator*(const float a) const;   // scalar
+	Vector3 operator/(const float a) const;   // divide by scalar
+	Vector3 operator-() const;
 	
-	Vector3 operator+=(const Vector3& s);
-	Vector3 operator-=(const Vector3& s);  
-	Vector3 operator*=(const Vector3& s);   
-	Vector3 operator/=(float f);
+	bool operator==(const Vector3& s) const;
+	bool operator!=(const Vector3& s) const;
+
+	Vector3& operator+=(const Vector3& s);
+	Vector3& operator-=(const Vector3& s);  
+	Vector3& operator*=(const Vector3& s);   
+	Vector3& operator/=(float f);
 
 	Vector3 operator=(const Vector3& s);
 };

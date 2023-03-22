@@ -3,6 +3,11 @@
 
 int main()
 {
+    Vector3 m1{ 1,2,3 };
+    Vector3 m2{ 1,1,1 };
+    m1 -= m2;
+    m1.Print();
+
     Vector3 right{ 7, 14, 21 };
     right /= 7;
     right.Print();
@@ -20,7 +25,7 @@ int main()
     vector2.Print();
     v3.Print();
     test.Print();
-    Vector3 test2(1.4404f, 2.505f, 5.6606);
+    Vector3 test2(1.4404f, 2.505f, 5.6606f);
     test2.Print();
 
     printf("\nWorking on: \n");
