@@ -106,3 +106,17 @@ char* String::GetString() const
     //return buffer with \0?
     return buffer;
 }
+
+String String::operator+(const String& s) const
+{/*
+    const char* temp = s.buffer;
+    int charCounter{ 0 };
+    while (*temp != '\0') {
+        charCounter++;
+        temp++;
+    }*/
+
+    memcpy(buffer + length, s.buffer, length+s.length);
+    //length += charCounter;
+    return String(buffer, length+s.length-2);
+}
