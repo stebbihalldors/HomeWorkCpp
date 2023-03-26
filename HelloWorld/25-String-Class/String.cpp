@@ -108,15 +108,10 @@ char* String::GetString() const
 }
 
 String String::operator+(const String& s) const
-{/*
-    const char* temp = s.buffer;
-    int charCounter{ 0 };
-    while (*temp != '\0') {
-        charCounter++;
-        temp++;
-    }*/
-
-    memcpy(buffer + length, s.buffer, length+s.length);
+{
+    memcpy(buffer + length, s.buffer, s.length);
     //length += charCounter;
-    return String(buffer, length+s.length-2);
+   
+    //printf("buffer: %s , s.buffer: %s\n", buffer, s.buffer);
+    return String(buffer, maxSize);
 }

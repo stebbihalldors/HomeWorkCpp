@@ -12,7 +12,7 @@ int main()
     String test2{ "test2", 100 };
 
     test = test + test2;
-    test.GetString();
+    test.Print();
     return 0;
     
      //Tests for creating the String class..
