@@ -2,6 +2,8 @@
 #include <cstdio>
 #include <exception>
 #include <string.h>
+//#include <ostream>
+#include <iostream>
 
 using namespace std;
 
@@ -129,4 +131,9 @@ char& String::operator[] (int i)
         throw exception("out of bounds\n");
 
     return buffer[i];
+}
+
+ostream& operator<<(ostream& os, const String& s)
+{
+    return (os << "String: " << s.buffer << "Length: " << s.length << "MaxSize: " << s.maxSize << endl);
 }

@@ -8,6 +8,10 @@ using namespace std;
 
 int main()
 {
+    String yeah{ "Jebbsi",100 };
+    cout << yeah;
+    return 0;
+
     String tester{ "tester",100 };
     char fromIndex = tester[2];
     printf("test1: %c, Test2: %c\n", fromIndex, tester[0]);
