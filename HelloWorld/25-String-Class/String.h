@@ -16,6 +16,7 @@ public:
     String& operator=(String&& other) noexcept;
     //Working on:
     String operator+(const String& s) const;
+    String& operator+=(const String& s);
 
     void Append(const char* text);
     void AppendLine(const char* text);

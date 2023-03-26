@@ -13,6 +13,11 @@ int main()
 
     test = test + test2;
     test.Print();
+
+    String test3{ "test3",100 };
+    String test4{ "test4",100 };
+    test3 += test4;
+    test3.Print();
     return 0;
     
      //Tests for creating the String class..

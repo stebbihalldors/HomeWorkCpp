@@ -115,3 +115,9 @@ String String::operator+(const String& s) const
     //printf("buffer: %s , s.buffer: %s\n", buffer, s.buffer);
     return String(buffer, maxSize);
 }
+
+String& String::operator+=(const String& s)
+{
+    memcpy(buffer + length, s.buffer, s.length);
+    return *this;
+}
