@@ -8,6 +8,11 @@ using namespace std;
 
 int main()
 {
+    String tester{ "tester",100 };
+    char fromIndex = tester[2];
+    printf("test1: %c, Test2: %c\n", fromIndex, tester[0]);
+    return 0;
+
     String test{ "test" ,100};
     String test2{ "test2", 100 };
 

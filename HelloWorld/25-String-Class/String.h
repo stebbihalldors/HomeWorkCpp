@@ -17,6 +17,7 @@ public:
     //Working on:
     String operator+(const String& s) const;
     String& operator+=(const String& s);
+    char& operator[] (int i);
 
     void Append(const char* text);
     void AppendLine(const char* text);

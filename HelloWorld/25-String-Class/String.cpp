@@ -62,7 +62,7 @@ String& String::operator=(String&& other) noexcept
     if (this == &other) return *this;
     delete[] buffer;
     maxSize = other.maxSize;
-    length = other.maxSize;
+    length = other.length;
     buffer = other.buffer;
     other.buffer = nullptr;
     return *this;
@@ -120,4 +120,13 @@ String& String::operator+=(const String& s)
 {
     memcpy(buffer + length, s.buffer, s.length);
     return *this;
+}
+
+char& String::operator[] (int i)
+{
+    //mayb dont need to tired to check atm
+    if(i < 0 && i > maxSize)
+        throw exception("out of bounds\n");
+
+    return buffer[i];
 }
