@@ -2,8 +2,6 @@
 #include <cstdio>
 #include <exception>
 #include <string.h>
-//#include <ostream>
-#include <iostream>
 
 using namespace std;
 

@@ -168,6 +168,9 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\25-String-Class\25-String-Class.vcxproj">
+      <Project>{73665c5e-bc99-48c1-9c09-730a6ed0fffb}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Vector-Class\Vector-Class.vcxproj">
       <Project>{973e6579-c0d7-4dd1-b792-7147d45a08e5}</Project>
     </ProjectReference>
