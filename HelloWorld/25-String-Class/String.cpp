@@ -133,5 +133,5 @@ char& String::operator[] (int i)
 
 ostream& operator<<(ostream& os, const String& s)
 {
-    return (os << "String: " << s.buffer << "Length: " << s.length << "MaxSize: " << s.maxSize << endl);
+    return (os << "String: " << s.buffer << " Length: " << s.length << " MaxSize: " << s.maxSize << endl);
 }
